@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import { ImPlus } from "react-icons/im";
 import NavTitle from "./NavTitle";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCategory } from "../../../../redux/orebiSlice";
+import { toggleCategory } from "../../../../redux/FoxSlice";
 
 const Category = () => {
   const [showSubCatOne, setShowSubCatOne] = useState(false);
 
   const checkedCategorys = useSelector(
-    (state) => state.orebiReducer.checkedCategorys
+    (state) => state.FoxReducer.checkedCategorys
   );
   const dispatch = useDispatch();
 

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import NavTitle from "./NavTitle";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleBrand } from "../../../../redux/orebiSlice";
+import { toggleBrand } from "../../../../redux/FoxSlice";
 
 const Brand = () => {
   const [showBrands, setShowBrands] = useState(true);
   const checkedBrands = useSelector(
-    (state) => state.orebiReducer.checkedBrands
+    (state) => state.FoxReducer.checkedBrands
   );
   const dispatch = useDispatch();
 

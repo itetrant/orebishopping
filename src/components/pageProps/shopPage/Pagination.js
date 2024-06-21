@@ -48,10 +48,10 @@ const Pagination = ({ itemsPerPage }) => {
   const endOffset = itemOffset + itemsPerPage;
   const currentItems = items.slice(itemOffset, endOffset);
   const selectedBrands = useSelector(
-    (state) => state.orebiReducer.checkedBrands
+    (state) => state.FoxReducer.checkedBrands
   );
   const selectedCategories = useSelector(
-    (state) => state.orebiReducer.checkedCategorys
+    (state) => state.FoxReducer.checkedCategorys
   );
   const pageCount = Math.ceil(items.length / itemsPerPage);
 

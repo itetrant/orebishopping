@@ -9,7 +9,7 @@ import { paginationItems } from "../../../constants";
 import { BsSuitHeartFill } from "react-icons/bs";
 
 const HeaderBottom = () => {
-  const products = useSelector((state) => state.orebiReducer.products);
+  const products = useSelector((state) => state.FoxReducer.products);
   const [show, setShow] = useState(false);
   const [showUser, setShowUser] = useState(false);
   const navigate = useNavigate();
