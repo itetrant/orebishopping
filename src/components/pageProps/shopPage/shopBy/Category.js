@@ -16,7 +16,7 @@ const Category = () => {
   const category = [
     {
       _id: 9006,
-      title: "Imprimante",
+      title: "imprimante",
     },
     {
       _id: 9007,
