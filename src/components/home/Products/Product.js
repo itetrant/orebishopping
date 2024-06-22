@@ -14,7 +14,7 @@ const Product = (props) => {
   const dispatch = useDispatch();
   const _id = props.productName;
   const idString = (_id) => {
-    return String(_id).toLowerCase().split(" ").join("");
+    return String(_id).toLowerCase().split(" ").join("-"); //NTT "" to "-"
   };
   const rootId = idString(_id);
   const [wishList, setWishList] = useState([]);

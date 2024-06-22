@@ -28,7 +28,9 @@ const Sale = () => {
               sales for all impriamnte{" "}
             </p>
             <div className=" mb-8">
-              <ShopNow />
+              <Link to="/shop">
+                  <ShopNow />
+              </Link>
             </div>
           </div>
         </div>

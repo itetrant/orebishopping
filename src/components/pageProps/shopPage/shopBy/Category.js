@@ -16,24 +16,20 @@ const Category = () => {
   const category = [
     {
       _id: 9006,
-      title: "Softline",
+      title: "Imprimante",
     },
     {
       _id: 9007,
-      title: "Homeline",
+      title: "Encre",
     },
     {
       _id: 9008,
-      title: "Dryfood",
+      title: "Ruban",
     },
     {
       _id: 9009,
-      title: "Freshfood",
+      title: "Bac",
     },
-    {
-      _id: 9010,
-      title: "Hardline",
-    },    
   ];
 
   const handleToggleCategory = (category) => {

@@ -103,7 +103,7 @@ const HeaderBottom = () => {
                           `/product/${item.productName
                             .toLowerCase()
                             .split(" ")
-                            .join("")}`,
+                            .join("-")}`,  //NTT "" to "-"
                           {
                             state: {
                               item: item,

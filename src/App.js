@@ -71,6 +71,7 @@ const router = createBrowserRouter(
       {/* Outside Outlet */}
       <Route path="/signup" element={<SignUp />}></Route>
       <Route path="/signin" element={<SignIn />}></Route>
+      <Route path="*" element={<ErrorPage />} />
     </Route>
   )
 );
