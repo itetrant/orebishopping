@@ -16,20 +16,24 @@ const Category = () => {
   const category = [
     {
       _id: 9006,
-      title: "Imprimante",
+      title: "Softline",
     },
     {
       _id: 9007,
-      title: "Encre",
+      title: "Homeline",
     },
     {
       _id: 9008,
-      title: "Ruban",
+      title: "Dryfood",
     },
     {
       _id: 9009,
-      title: "Bac de dechet",
+      title: "Freshfood",
     },
+    {
+      _id: 9010,
+      title: "Hardline",
+    },    
   ];
 
   const handleToggleCategory = (category) => {
@@ -63,7 +67,7 @@ const Category = () => {
               )}
             </li>
           ))}
-          <li onClick={() => console.log(checkedCategorys)}>test</li>
+          {/* <li onClick={() => console.log(checkedCategorys)}>test</li> */}
         </ul>
       </div>
     </div>

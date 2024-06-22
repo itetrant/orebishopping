@@ -18,12 +18,16 @@ const About = () => {
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="About" prevLocation={prevLocation} />
       <div className="pb-10">
-        <h1 className="max-w-[600px] text-base text-lightText mb-2">
-          <span className="text-primeColor font-semibold text-lg">Fox</span>{" "}
-          is one of the world's leading ecommerce brands and is internationally
-          recognized for celebrating the essence of classic Worldwide cool
-          looking style.
+
+        <h1 class="max-w-[600px] text-base text-lightText mb-2">
+          <span class="text-primeColor font-semibold text-lg">B's Mart</span>
+          <p>Vision: Multi-industry, multi-format, and multinational business.</p>
+          <p>Mission:</p>
+          <p>- Listen to and encourage employees, aiming to build and develop the company quickly and satisfy customers.</p>
+          <p>- Leverage the strengths of retail business experts worldwide through the local management team.</p>
+          <p>- Become a dynamic enterprise and a reliable partner in the consumer business community in Vietnam.</p>
         </h1>
+
         <Link to="/shop">
           <button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300">
             Continue Shopping

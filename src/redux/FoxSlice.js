@@ -1,3 +1,4 @@
+//Fox reducer
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
@@ -9,7 +10,7 @@ const initialState = {
 };
 
 export const FoxSlice = createSlice({
-  name: "Fox",
+  name: "FoxCommerce",
   initialState,
   reducers: {
     addToCart: (state, action) => {

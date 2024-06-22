@@ -8,6 +8,8 @@ import Image from "../../designLayouts/Image";
 import { navBarList } from "../../../constants";
 import Flex from "../../designLayouts/Flex";
 
+import { IoLocationSharp } from "react-icons/io5";
+
 const Header = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [sidenav, setSidenav] = useState(false);
@@ -32,9 +34,10 @@ const Header = () => {
         <Flex className="flex items-center justify-between h-full">
           <Link to="/">
             <div>
-              <Image className="w-20 h-20 object-cover" imgSrc={logo} />
+              <Image className="w-14 h-14 object-cover" imgSrc={logo} />
             </div>
           </Link>
+
           <div>
             {showMenu && (
               <motion.ul

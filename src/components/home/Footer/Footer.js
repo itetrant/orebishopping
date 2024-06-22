@@ -34,8 +34,7 @@ const Footer = () => {
           <FooterListTitle title=" More about BSM Shop" />
           <div className="flex flex-col gap-6">
             <p className="text-base w-full xl:w-[80%]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sint
-              ab ullam, numquam nesciunt in.
+            Officially operating since June 20, 2013, B’s Mart convenience store chain now owns more than 150 stores spread across Ho Chi Minh City. In the future, B’s Mart aims to rapidly expand nationwide with the goal of becoming the leading convenience store chain in Vietnam.
             </p>
             <ul className="flex items-center gap-2">
               <a

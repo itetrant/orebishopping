@@ -5,9 +5,15 @@ import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
 const Contact = () => {
   const location = useLocation();
   const [prevLocation, setPrevLocation] = useState("");
+
   useEffect(() => {
-    setPrevLocation(location.state.data);
+    if (location.state && location.state.data) {
+      setPrevLocation(location.state.data);
+    } else {
+      setPrevLocation("Home"); // Set a default value if no state is found
+    }
   }, [location]);
+
 
   const [clientName, setclientName] = useState("");
   const [email, setEmail] = useState("");
