@@ -8,11 +8,19 @@ const SpecialOffers = () => {
   const { category } = useParams();
 
   const [data, setData] = useState([]);
+
   useEffect(() => {
     setData(SplOfferData);
-  }, [data]);
+  }, [category]); // Correct dependency array
 
-  const catData = data.filter((item) => item.cat === category);
+  let catData = data;
+  
+  if (category) {
+    catData = data.filter((item) => item.cat === category);
+  } else {
+    catData = data.slice(0, 3);
+  }
+
   return (
     <div className="w-full pb-20">
       <Heading heading="Special Offers" />

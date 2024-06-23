@@ -1,16 +1,16 @@
 import {
-  spfOne,
-  spfTwo,
-  spfThree,
-  spfFour,
-  bestSellerOne,
-  bestSellerTwo,
-  bestSellerThree,
-  bestSellerFour,
-  newArrOne,
-  newArrTwo,
-  newArrThree,
-  newArrFour,
+  // spfOne,
+  // spfTwo,
+  // spfThree,
+  // spfFour,
+  // bestSellerOne,
+  // bestSellerTwo,
+  // bestSellerThree,
+  // bestSellerFour,
+  // newArrOne,
+  // newArrTwo,
+  // newArrThree,
+  // newArrFour,
   imprimante1,
   imprimante2,
   imprimante4,
@@ -55,6 +55,32 @@ import {
 
 import "./style.css";
 
+// =================== category Start here ====================
+
+export const categoryList = [
+  {
+    _id: 9006,
+    title: "imprimante",
+    link: "/category/imprimante",
+  },
+  {
+    _id: 9007,
+    title: "Encre",
+    link: "/category/encre",
+  },
+  {
+    _id: 9008,
+    title: "Ruban",
+    link: "/category/ruban",
+  },
+  {
+    _id: 9009,
+    title: "Bac de dechet",
+    link: "/category/bac",
+  },
+];
+
+// =================== category End here ====================
 // =================== NavBarList Start here ====================
 export const navBarList = [
   {
@@ -174,7 +200,7 @@ export const SplOfferData = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "ancre",
+    cat: "encre",
   },
   {
     _id: "210",
@@ -184,7 +210,7 @@ export const SplOfferData = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "ancre",
+    cat: "encre",
   },
   {
     _id: "211",
@@ -194,7 +220,7 @@ export const SplOfferData = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "ancre",
+    cat: "encre",
   },
   {
     _id: "212",
@@ -204,7 +230,7 @@ export const SplOfferData = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "ancre",
+    cat: "encre",
   },
   {
     _id: "213",
@@ -214,7 +240,7 @@ export const SplOfferData = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Ruban",
+    cat: "ruban",
   },
   {
     _id: "214",
@@ -224,7 +250,7 @@ export const SplOfferData = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Ruban",
+    cat: "ruban",
   },
   {
     _id: "215",
@@ -234,7 +260,7 @@ export const SplOfferData = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Ruban",
+    cat: "ruban",
   },
   {
     _id: "216",
@@ -244,7 +270,7 @@ export const SplOfferData = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Ruban",
+    cat: "ruban",
   },
   {
     _id: "217",
@@ -254,7 +280,7 @@ export const SplOfferData = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Bac",
+    cat: "bac",
   },
   {
     _id: "219",
@@ -264,7 +290,7 @@ export const SplOfferData = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Bac",
+    cat: "bac",
   },
   {
     _id: "220",
@@ -274,7 +300,7 @@ export const SplOfferData = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Bac",
+    cat: "bac",
   },
   {
     _id: "221",
@@ -284,7 +310,7 @@ export const SplOfferData = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Bac",
+    cat: "bac",
   },
 ];
 // =================== Special Offer data End here ==============
@@ -661,7 +687,7 @@ export const paginationItems = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Bac",
+    cat: "bac",
   },
   {
     _id: "221",
@@ -671,7 +697,7 @@ export const paginationItems = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Bac",
+    cat: "bac",
   },
   {
     _id: "215",
@@ -681,7 +707,7 @@ export const paginationItems = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Ruban",
+    cat: "ruban",
   },
   {
     _id: "216",
@@ -691,7 +717,7 @@ export const paginationItems = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Ruban",
+    cat: "ruban",
   },
   {
     _id: "209",
@@ -701,7 +727,7 @@ export const paginationItems = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Encre",
+    cat: "encre",
   },
   {
     _id: "210",
@@ -711,7 +737,7 @@ export const paginationItems = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Encre",
+    cat: "encre",
   },
 
   {
@@ -722,7 +748,7 @@ export const paginationItems = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Encre",
+    cat: "encre",
   },
   {
     _id: "212",
@@ -732,7 +758,7 @@ export const paginationItems = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Encre",
+    cat: "encre",
   },
   {
     _id: "213",
@@ -742,7 +768,7 @@ export const paginationItems = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Ruban",
+    cat: "ruban",
   },
   {
     _id: "214",
@@ -752,7 +778,7 @@ export const paginationItems = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Ruban",
+    cat: "ruban",
   },
 
   {
@@ -763,7 +789,7 @@ export const paginationItems = [
     color: "Mixed",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Bac",
+    cat: "bac",
   },
   {
     _id: "219",
@@ -773,7 +799,7 @@ export const paginationItems = [
     color: "Black",
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "Bac",
+    cat: "bac",
   },
 
   // =================== imprimante hp =================

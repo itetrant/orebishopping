@@ -1,3 +1,5 @@
+/*prototype*/
+
 import React, { useEffect, useState } from "react";
 import { BsGridFill } from "react-icons/bs";
 import { ImList } from "react-icons/im";
@@ -8,6 +10,7 @@ const ProductBanner = ({ itemsPerPageFromBanner }) => {
   const [girdViewActive, setGridViewActive] = useState(true);
   const [listViewActive, setListViewActive] = useState(false);
   useEffect(() => {
+    //TODO change view
     const gridView = document.querySelector(".gridView");
     const listView = document.querySelector(".listView");
 
@@ -58,7 +61,7 @@ const ProductBanner = ({ itemsPerPageFromBanner }) => {
           <label className="block">Sort by:</label>
           <select
             // onChange={(e) => setSelected(e.target.value)}
-            id="countries"
+            id="SortBy"
             className="w-32 md:w-52 border-[1px] border-gray-200 py-1 px-4 cursor-pointer text-primeColor text-base block dark:placeholder-gray-400 appearance-none focus-within:outline-none focus-visible:border-primeColor"
           >
             <option value="Best Sellers">Best Sellers</option>
@@ -73,8 +76,8 @@ const ProductBanner = ({ itemsPerPageFromBanner }) => {
         <div className="flex items-center gap-2 text-[#767676] relative">
           <label className="block">Show:</label>
           <select
-            onChange={(e) => itemsPerPageFromBanner(+e.target.value)}
-            id="countries"
+            onChange={(e) => itemsPerPageFromBanner(+e.target.value)} //+convert to number
+            id="ItemPerPage"
             className="w-16 md:w-20 border-[1px] border-gray-200 py-1 px-4 cursor-pointer text-primeColor text-base block dark:placeholder-gray-400 appearance-none focus-within:outline-none focus-visible:border-primeColor"
           >
             <option value="12">12</option>

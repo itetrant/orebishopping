@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdClose } from "react-icons/md";
-import { HiMenuAlt2 } from "react-icons/hi";
+import { HiMenuAlt2 } from "react-icons/hi";  //hamburger menu icon
 import { motion } from "framer-motion";
 import { logo, logoLight } from "../../../assets/images";
 import Image from "../../designLayouts/Image";
-import { navBarList } from "../../../constants";
+import { navBarList, categoryList } from "../../../constants"; //header not included category/brand
 import Flex from "../../designLayouts/Flex";
 
 // import { IoLocationSharp } from "react-icons/io5";
@@ -24,7 +24,7 @@ const Header = () => {
         setShowMenu(true);
       }
     };
-    ResponsiveMenu();
+    ResponsiveMenu(); //show|hide hamburger menu
     window.addEventListener("resize", ResponsiveMenu);
   }, []);
 
@@ -94,6 +94,8 @@ const Header = () => {
                         </li>
                       ))}
                     </ul>
+
+                    {/*sideNav menu categories */}
                     <div className="mt-4">
                       <h1
                         onClick={() => setCategory(!category)}
@@ -109,14 +111,26 @@ const Header = () => {
                           transition={{ duration: 0.4 }}
                           className="text-sm flex flex-col gap-1"
                         >
-                          <li className="headerSedenavLi">New Arrivals</li>
-                          <li className="headerSedenavLi">Gudgets</li>
-                          <li className="headerSedenavLi">Accessories</li>
-                          <li className="headerSedenavLi">Electronics</li>
-                          <li className="headerSedenavLi">Others</li>
+                          {/* TODO dynamic */}
+
+                          {categoryList.map(({ _id, title, link }) => (
+                             
+                             <li key={_id} className="headerSideNavLi">
+                                <Link to={link}
+                                 // state={{ data: location.pathname.split("/")[1] }}
+                                 onClick={() => setSidenav(false)}
+                                >
+                                {title}
+                                </Link>
+                            </li>
+                        ))
+                        } 
                         </motion.ul>
                       )}
                     </div>
+
+                    {/*sideNav menu brands */}
+
                     <div className="mt-4">
                       <h1
                         onClick={() => setBrand(!brand)}
@@ -132,11 +146,11 @@ const Header = () => {
                           transition={{ duration: 0.4 }}
                           className="text-sm flex flex-col gap-1"
                         >
-                          <li className="headerSedenavLi">New Arrivals</li>
-                          <li className="headerSedenavLi">Gudgets</li>
-                          <li className="headerSedenavLi">Accessories</li>
-                          <li className="headerSedenavLi">Electronics</li>
-                          <li className="headerSedenavLi">Others</li>
+                          {/* TODO dynamic */}
+
+                          {categoryList.map(({ _id, title, link }) => (
+                            <li className="headerSideNavLi">{title}</li>
+                        ))} 
                         </motion.ul>
                       )}
                     </div>

@@ -4,7 +4,7 @@ import Product from "../../home/Products/Product";
 import { useSelector } from "react-redux";
 import { paginationItems } from "../../../constants";
 
-const items = paginationItems;
+const items = paginationItems; //TODO call API
 
 function Items({ currentItems, selectedBrands, selectedCategories }) {
   // Filter items based on selected brands and categories
@@ -16,8 +16,9 @@ function Items({ currentItems, selectedBrands, selectedCategories }) {
     const isCategorySelected =
       selectedCategories.length === 0 ||
       selectedCategories.some((category) => category.title === item.cat);
+      // selectedCategories.some((category) => category._id === item._id);
 
-    return isBrandSelected && isCategorySelected;
+    return isBrandSelected && isCategorySelected; // must match both conditions
   });
 
   return (
@@ -90,7 +91,7 @@ const Pagination = ({ itemsPerPage }) => {
           Products from {itemStart} to {Math.min(endOffset, items.length)} of{" "}
           {items.length}
         </p>
-        <button onClick={() => console.log(selectedBrands)}> test</button>
+        {/* <button onClick={() => console.log(selectedBrands)}> test</button> */}
       </div>
     </div>
   );

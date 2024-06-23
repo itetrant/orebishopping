@@ -21,8 +21,10 @@ module.exports = {
         titleFont: ["Poppins", "sans-serif"],
       },
       colors: {
-        primeColor: "#008A33", //262626
-        primeColorDark: "#006C28", //262626
+        primeColor: "#008A33",
+        primeColorDark: "#006C28",
+        primeColorLight: "#27BA5E",
+        menuBG: "#4BC779",
         menuText: "#ffffff",
         menuTextHover: "#000000",
       },

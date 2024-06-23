@@ -13,16 +13,22 @@ const HeaderBottom = () => {
   const [show, setShow] = useState(false);
   const [showUser, setShowUser] = useState(false);
   const navigate = useNavigate();
-  const ref = useRef();
+  const ref = useRef(); //shop by cat
+  const ref2 = useRef(); //account
   useEffect(() => {
     document.body.addEventListener("click", (e) => {
       if (ref.current.contains(e.target)) {
-        setShow(true);
+        setShow(prev => !prev);
       } else {
         setShow(false);
       }
+      if (ref2.current.contains(e.target)) {
+        setShowUser(prev => !prev)
+      } else {
+        setShowUser(false)
+      }
     });
-  }, [show, ref]);
+  }, []);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -45,7 +51,7 @@ const HeaderBottom = () => {
       <div className="max-w-container mx-auto">
         <Flex className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full px-4 pb-4 lg:pb-0 h-full lg:h-24">
           <div
-            onClick={() => setShow(!show)}
+            //onClick={() => setShow(!show)}
             ref={ref}
             className="flex h-14 cursor-pointer items-center gap-2 text-primeColor"
           >
@@ -57,7 +63,7 @@ const HeaderBottom = () => {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                 className="absolute top-16 z-50 bg-primeColor w-44 text-menuText h-auto p-4 pb-6"
+                 className="absolute top-16 z-50 bg-menuBG w-44 text-menuText h-auto p-4 pb-6"
               >
                 <Link to={"category/imprimante"}>
                  <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
@@ -65,17 +71,17 @@ const HeaderBottom = () => {
                   </li>
                 </Link>
 
-                <Link to={"category/ancre"}>
+                <Link to={"category/encre"}>
                  <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
-                    ancre
+                    Encre
                   </li>
                 </Link>
-                <Link to={"category/Ruban"}>
+                <Link to={"category/ruban"}>
                  <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
-                    ruban
+                    Ruban
                   </li>
                 </Link>
-                <Link to={"category/Bac"}>
+                <Link to={"category/bac"}>
                 <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
                     Bac de dechet
                   </li>
@@ -140,7 +146,9 @@ const HeaderBottom = () => {
             )}
           </div>
           <div className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative">
-            <div onClick={() => setShowUser(!showUser)} className="flex">
+            <div  ref={ref2} 
+           // onClick={() => setShowUser(!showUser)} 
+            className="flex">
               <FaUser />
               <FaCaretDown />
             </div>
@@ -149,7 +157,7 @@ const HeaderBottom = () => {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="absolute top-6 -left-6 z-50 bg-primeColor w-44 text-menuText h-auto p-4 pb-6"
+                className="absolute top-6 -left-6 z-50 bg-menuBG w-44 text-menuText h-auto p-4 pb-6"
               >
                 <Link to="/signin">
                   <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
