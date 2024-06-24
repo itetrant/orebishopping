@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
 import Product from "../../home/Products/Product";
 import { useSelector } from "react-redux";
-import { paginationItems } from "../../../constants";
+import { paginationItems } from "../../../constants"; //TODO call API
 
 const items = paginationItems; //TODO call API
 
 function Items({ currentItems, selectedBrands, selectedCategories }) {
-  // Filter items based on selected brands and categories
+  // Filter items based on selected brand by NAME!!!
+   //TODO filter by brand_id
   const filteredItems = currentItems.filter((item) => {
     const isBrandSelected =
       selectedBrands.length === 0 ||
       selectedBrands.some((brand) => brand.title === item.brand);
 
+ // Filter items based on selected category by NAME!!!
+ //TODO filter by cat_id
     const isCategorySelected =
       selectedCategories.length === 0 ||
       selectedCategories.some((category) => category.title === item.cat);
-      // selectedCategories.some((category) => category._id === item._id);
 
     return isBrandSelected && isCategorySelected; // must match both conditions
   });

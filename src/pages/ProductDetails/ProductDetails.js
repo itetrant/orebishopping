@@ -43,6 +43,8 @@ const ProductDetails = () => {
   };
 
   useEffect(() => {
+    // console.log('location.state.item',location.state.item);
+    // console.log('location.pathname',location.pathname);
     setProductInfo(location.state.item);
     setPrevLocation(location.pathname);
   }, [location, productInfo.ficheTech]);

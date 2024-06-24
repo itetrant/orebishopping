@@ -18,13 +18,13 @@ const SpecialOffers = () => {
   if (category) {
     catData = data.filter((item) => item.cat === category);
   } else {
-    catData = data.slice(0, 3);
+    catData = data.slice(0, 5);
   }
 
   return (
     <div className="w-full pb-20">
       <Heading heading="Special Offers" />
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-3 gap-10">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-5 gap-10">
         {catData.map((data) => (
           <Product
             key={data._id}

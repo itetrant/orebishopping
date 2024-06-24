@@ -21,6 +21,7 @@ import Journal from "./pages/Journal/Journal";
 import Offer from "./pages/Offer/Offer";
 import Payment from "./pages/payment/Payment";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import ProductOnSale from "./components/pageProps/productDetails/ProductsOnSale";
 import Shop from "./pages/Shop/Shop";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -53,7 +54,7 @@ const Layout = () => {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Layout />}  errorElement={<ErrorPage />}>
       {/* Inside Outlet */}
         {/* ==================== Header Navlink Start here =================== */}
         <Route index element={<Home />}></Route>
@@ -66,6 +67,7 @@ const router = createBrowserRouter(
         <Route path="/product/:_id" element={<ProductDetails />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/paymentgateway" element={<Payment />}></Route>
+        <Route path="/ProductOnSale" element={<ProductOnSale />}></Route>
         <Route path="*" element={<ErrorPage />} />
       </Route>
       {/* Outside Outlet */}

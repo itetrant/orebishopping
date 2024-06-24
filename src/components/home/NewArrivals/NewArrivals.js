@@ -54,7 +54,7 @@ const NewArrivals = () => {
           <Product
             _id="100001"
             img={newArrOne}
-            productName="Round Table Clock"
+            productName="Banh Trung Thu"
             price="44.00"
             color="Black"
             badge={true}
@@ -65,7 +65,7 @@ const NewArrivals = () => {
           <Product
             _id="100002"
             img={newArrTwo}
-            productName="Smart Watch"
+            productName="Sua Chua Vinamilk Loc4"
             price="250.00"
             color="Black"
             badge={true}
@@ -76,7 +76,7 @@ const NewArrivals = () => {
           <Product
             _id="100003"
             img={newArrThree}
-            productName="cloth Basket"
+            productName="Sua Chua Vinamilk TH24"
             price="80.00"
             color="Mixed"
             badge={true}
@@ -87,7 +87,7 @@ const NewArrivals = () => {
           <Product
             _id="100004"
             img={newArrFour}
-            productName="Funny toys for babies"
+            productName="Chocobie"
             price="60.00"
             color="Mixed"
             badge={false}

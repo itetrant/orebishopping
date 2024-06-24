@@ -6,26 +6,27 @@ import {
   bestSellerTwo,
   bestSellerThree,
   bestSellerFour,
+  bestSellerFive,
 } from "../../../assets/images/index";
 
 const BestSellers = () => {
   return (
     <div className="w-full pb-20">
       <Heading heading="Our Bestsellers" />
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-5 gap-10">
         <Product
           _id="1011"
           img={bestSellerOne}
-          productName="Flower Base"
+          productName="Orange Sting"
           price="35.00"
-          color="Blank and White"
+          color="Blank and Orange"
           badge={true}
           des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
           _id="1012"
           img={bestSellerTwo}
-          productName="New Backpack"
+          productName="New Mirinda"
           price="180.00"
           color="Gray"
           badge={false}
@@ -34,7 +35,7 @@ const BestSellers = () => {
         <Product
           _id="1013"
           img={bestSellerThree}
-          productName="Household materials"
+          productName="Sting Dau"
           price="25.00"
           color="Mixed"
           badge={true}
@@ -43,12 +44,21 @@ const BestSellers = () => {
         <Product
           _id="1014"
           img={bestSellerFour}
-          productName="Travel Bag"
+          productName="Phomai Delcubi"
           price="220.00"
           color="Black"
           badge={false}
           des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
+        <Product
+          _id="1015"
+          img={bestSellerFive}
+          productName="Mirinda"
+          price="220.00"
+          color="Black"
+          badge={false}
+          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
+        />        
       </div>
     </div>
   );

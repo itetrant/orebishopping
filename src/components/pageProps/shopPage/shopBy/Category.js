@@ -4,18 +4,18 @@ import { ImPlus } from "react-icons/im";
 import NavTitle from "./NavTitle";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCategory } from "../../../../redux/FoxSlice";
-
 import { categoryList } from "../../../../constants"; //TODO call API
 
 const Category = () => {
-  const [showSubCatOne, setShowSubCatOne] = useState(false);
 
+  const [showSubCatOne, setShowSubCatOne] = useState(false);
   const checkedCategorys = useSelector(
     (state) => state.FoxReducer.checkedCategorys
   );
   const dispatch = useDispatch();
 
   const handleToggleCategory = (category) => {
+    console.log(category)
     dispatch(toggleCategory(category));
   };
 
@@ -46,7 +46,7 @@ const Category = () => {
               )}
             </li>
           ))}
-          <li onClick={() => console.log(checkedCategorys)}>console.log</li>
+          {/* <li onClick={() => console.log(checkedCategorys)}>console.log</li> */}
         </ul>
       </div>
     </div>

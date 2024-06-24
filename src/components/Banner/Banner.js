@@ -8,53 +8,65 @@ import {
 } from "../../assets/images";
 import Image from "../designLayouts/Image";
 
-const CustomSlide = ({ Subtext, imgSrc, text, buttonLink, buttonText }) => (
-  <div
-    style={{
-      position: "relative",
-      backgroundColor: "#F5F5F3", // Gray background color
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center", // Center vertically
-    }}
-  >
+const CustomSlide = ({ Subtext, imgSrc, text, buttonLink, buttonText }) => {
+  const isExternal = buttonLink.startsWith("http://") || buttonLink.startsWith("https://");
+
+  return (
     <div
       style={{
-        maxWidth: "450px", // Adjust the maxWidth as needed
-        marginRight: "100px", // Add margin between text/button and image
+        position: "relative",
+        backgroundColor: "#F5F5F3", // Gray background color
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center", // Center vertically
       }}
     >
-      <h1
+      <div
         style={{
-          marginBottom: "15px",
-          fontSize: "2.5rem", // Adjust the font size as needed
-          color: "#000", // Black color
-          fontWeight: "700",
+          maxWidth: "450px", // Adjust the maxWidth as needed
+          marginRight: "100px", // Add margin between text/button and image
         }}
       >
-        {text}
-      </h1>
-      <p
-        style={{
-          marginBottom: "25px",
-          fontSize: "1.5rem", // Adjust the font size as needed
-          color: "#666", // Gray color
-        }}
-      >
-        {Subtext}
-      </p>
+        <h1
+          style={{
+            marginBottom: "15px",
+            fontSize: "2.5rem", // Adjust the font size as needed
+            color: "#000", // Black color
+            fontWeight: "700",
+          }}
+        >
+          {text}
+        </h1>
+        <p
+          style={{
+            marginBottom: "25px",
+            fontSize: "1.5rem", // Adjust the font size as needed
+            color: "#666", // Gray color
+          }}
+        >
+          {Subtext}
+        </p>
 
-      <Link to= {buttonLink}>
-        <button className="bg-primeColor text-white text-lg font-bodyFont w-[185px] h-[50px] hover:bg-black duration-300 font-bold">
-          {buttonText}
-        </button>
-      </Link>
+        {isExternal ? (
+          <a href={buttonLink} target="_blank" rel="noopener noreferrer">
+            <button className="bg-primeColor text-white text-lg font-bodyFont w-[185px] h-[50px] hover:bg-black duration-300 font-bold">
+              {buttonText}
+            </button>
+          </a>
+        ) : (
+          <Link to={buttonLink}>
+            <button className="bg-primeColor text-white text-lg font-bodyFont w-[185px] h-[50px] hover:bg-black duration-300 font-bold">
+              {buttonText}
+            </button>
+          </Link>
+        )}
+      </div>
+      <div style={{ marginLeft: "100px" }}>
+        <Image imgSrc={imgSrc} />
+      </div>
     </div>
-    <div style={{ marginLeft: "100px" }}>
-      <Image imgSrc={imgSrc} />
-    </div>
-  </div>
-);
+  );
+};
 
 const Banner = () => {
   const [dotActive, setDocActive] = useState(0);
@@ -152,31 +164,29 @@ const Banner = () => {
   const slides = [
     {
       imgSrc: bannerImgOne,
-      text: "Enhance Your Printing Experience",
-      Subtext:
-        "Explore our premium printers and consumables for exceptional results",
-      buttonLink: "/shop",
+      text: "Back To School",
+      Subtext: "Back To School - Ưu đãi cực Cool",
+      buttonLink: "/category/imprimante",
       buttonText: "Shop Now",
     },
     {
       imgSrc: bannerImgTwo,
-      text: "Quality Printing Solutions",
-      Subtext:
-        "Discover our wide range of printers and consumables designed for professional printing needs.",
-      buttonLink: "/about",
-      buttonText: "About-us",
+      text: "Mở Bcard - Dùng Thỏa Thích",
+      Subtext: "Donwload Loyalty App - Tích lũy điểm khi mua sắm tại B's Mart.",
+      buttonLink: "https://bcard.bsmartvina.com",
+      buttonText: "Download",
     },
     {
       imgSrc: bannerImgThree,
-      text: "Efficiency Redefined",
+      text: "Tưng Bừng Ưu Đãi Cùng Comfort.",
       Subtext:
-        "Maximize productivity with our advanced printers and high-quality consumables. ",
-      buttonLink: "/contact",
-      buttonText: "Contact-us",
+        "Từ 13/6 - 30/7. Tưng Bừng Ưu Đãi Cùng Comfort. Giảm giá đến 50%.",
+      buttonLink: "/category/bac",
+      buttonText: "Mua Ngay",
     },
-
     // Add more slides as needed
   ];
+
   return (
     <div className="w-full bg-white">
       <Slider {...settings}>
