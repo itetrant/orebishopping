@@ -65,25 +65,25 @@ const HeaderBottom = () => {
                 transition={{ duration: 0.5 }}
                  className="absolute top-16 z-50 bg-menuBG w-44 text-menuText h-auto p-4 pb-6"
               >
-                <Link to={"category/imprimante"}>
+                <Link to={"category/do-uong-cac-loai"}>
                  <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
-                    Imprimante
+                    Đồ uống các loại
                   </li>
                 </Link>
 
-                <Link to={"category/encre"}>
+                <Link to={"category/do-hop"}>
                  <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
-                    Encre
+                    Đồ hộp các loại
                   </li>
                 </Link>
-                <Link to={"category/ruban"}>
+                <Link to={"category/gia-vi-nuoc-cham"}>
                  <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
-                    Ruban
+                    Gia vị-Nước Chấm
                   </li>
                 </Link>
-                <Link to={"category/bac"}>
+                <Link to={"category/do-gia-dung"}>
                 <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
-                    Bac de dechet
+                    Đồ gia dụng
                   </li>
                 </Link>
               </motion.ul>
