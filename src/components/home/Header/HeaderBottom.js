@@ -5,16 +5,20 @@ import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import Flex from "../../designLayouts/Flex";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { paginationItems } from "../../../constants";
+import { productList } from "../../../constants";
 import { BsSuitHeartFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { toggleCategory, resetCategory } from "../../../redux/FoxSlice";
 
 const HeaderBottom = () => {
   const products = useSelector((state) => state.FoxReducer.products);
+  const En = useSelector((state) => state.FoxReducer.En);
   const [show, setShow] = useState(false);
   const [showUser, setShowUser] = useState(false);
   const navigate = useNavigate();
   const ref = useRef(); //shop by cat
   const ref2 = useRef(); //account
+  let dispatch = useDispatch();
   useEffect(() => {
     document.body.addEventListener("click", (e) => {
       if (ref.current.contains(e.target)) {
@@ -40,11 +44,17 @@ const HeaderBottom = () => {
 
   useEffect(() => {
     //TODO API call
-    const filtered = paginationItems.filter((item) =>
+    const filtered = productList.filter((item) =>
       item.productName.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredProducts(filtered);
   }, [searchQuery]);
+
+  // Handle Category toggle
+  const handleToggleCategory = (category) => {
+    dispatch(resetCategory());
+    dispatch(toggleCategory(category));
+  };
 
   return (
     <div className="w-full bg-[#F5F5F3] relative">
@@ -56,7 +66,7 @@ const HeaderBottom = () => {
             className="flex h-14 cursor-pointer items-center gap-2 text-primeColor"
           >
             <HiOutlineMenuAlt4 className="w-5 h-5" />
-            <p className="text-[16px] font-normal">Shop by Category</p>
+            <p className="text-[16px] font-normal"> {En? "Shop by Category" : "Mua sắm theo danh mục"}</p>
 
             {show && (
               <motion.ul
@@ -65,24 +75,28 @@ const HeaderBottom = () => {
                 transition={{ duration: 0.5 }}
                  className="absolute top-16 z-50 bg-menuBG w-44 text-menuText h-auto p-4 pb-6"
               >
-                <Link to={"category/do-uong-cac-loai"}>
-                 <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
+                <Link to={"category/do-uong-cac-loai"} >
+                 <li onClick={()=>handleToggleCategory({ _id: 9006,    title: "do-uong-cac-loai",    link: "/category/do-uong-cac-loai"  })}             
+                    className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
                     Đồ uống các loại
                   </li>
                 </Link>
 
                 <Link to={"category/do-hop"}>
-                 <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
+                 <li onClick={()=>handleToggleCategory({_id: 9007,    title: "do-hop",    link: "/category/do-hop" })}
+                 className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
                     Đồ hộp các loại
                   </li>
                 </Link>
                 <Link to={"category/gia-vi-nuoc-cham"}>
-                 <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
+                 <li onClick={()=>handleToggleCategory({_id: 9008,    title: "gia-vi-nuoc-cham",    link: "/category/gia-vi-nuoc-cham" })}
+                    className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
                     Gia vị-Nước Chấm
                   </li>
                 </Link>
                 <Link to={"category/do-gia-dung"}>
-                <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
+                <li onClick={()=>handleToggleCategory({_id: 9009,    title: "do-gia-dung",    link: "/category/do-gia-dung" })}
+                    className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
                     Đồ gia dụng
                   </li>
                 </Link>
@@ -160,20 +174,17 @@ const HeaderBottom = () => {
                 className="absolute top-6 -left-6 z-50 bg-menuBG w-44 text-menuText h-auto p-4 pb-6"
               >
                 <Link to="/signin">
-                  <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
+                  <li className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
                     Login
                   </li>
                 </Link>
                 <Link onClick={() => setShowUser(false)} to="/signup">
-                  <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
+                <li className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
                     Sign Up
                   </li>
                 </Link>
-                <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
+                <li className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
                   Profile
-                </li>
-                <li className="text-menuText px-4 py-1 border-b-[1px] border-b-menuText hover:border-b-menuTextHover hover:text-menuTextHover duration-300 cursor-pointer">
-                  Others
                 </li>
               </motion.ul>
             )}

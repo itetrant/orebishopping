@@ -9,6 +9,9 @@ const Brand = () => {
   const checkedBrands = useSelector(
     (state) => state.FoxReducer.checkedBrands
   );
+  const En = useSelector(
+    (state) => state.FoxReducer.En
+  );  
   const dispatch = useDispatch();
 
   const brands = [
@@ -41,7 +44,7 @@ const Brand = () => {
         onClick={() => setShowBrands(!showBrands)}
         className="cursor-pointer"
       >
-        <NavTitle title="Shop by Brand" icons={true} />
+        <NavTitle title= {En?"Shop by Brand":"Mua sắm theo thương hiệu"}  icons={true} />
       </div>
       {showBrands && (
         <motion.div

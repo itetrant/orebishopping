@@ -4,8 +4,11 @@ import { FaFacebook, FaYoutube, FaLinkedin, FaGithub } from "react-icons/fa";
 import FooterListTitle from "./FooterListTitle";
 import { paymentCard } from "../../../assets/images";
 import Image from "../../designLayouts/Image";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+
+  const En = useSelector((state) => state.FoxReducer.En);  
   const [emailInfo, setEmailInfo] = useState("");
   const [subscription, setSubscription] = useState(false);
   const [errMsg, setErrMsg] = useState("");
@@ -34,7 +37,15 @@ const Footer = () => {
           <FooterListTitle title=" More about BSM Shop" />
           <div className="flex flex-col gap-6">
             <p className="text-base w-full xl:w-[80%]">
-            Officially operating since June 20, 2013, B’s Mart convenience store chain now owns more than 150 stores spread across Ho Chi Minh City. In the future, B’s Mart aims to rapidly expand nationwide with the goal of becoming the leading convenience store chain in Vietnam.
+            { En? 
+              <> 
+              Officially operating since June 20, 2013, B’s Mart convenience store chain now owns more than 150 stores spread across Ho Chi Minh City. In the future, B’s Mart aims to rapidly expand nationwide with the goal of becoming the leading convenience store chain in Vietnam. 
+              </>
+              : 
+              <>
+                Chính thức hoạt động vào ngày 20/6/2013, hiện nay chuỗi cửa hàng tiện lợi B’s mart đã sở hữu hơn 150 cửa hàng, trải khắp khu vực thành phố Hồ Chí Minh. Trong tương lai, B’s mart sẽ nhanh chóng mở rộng phát triển trên toàn quốc với mong muốn trở thành chuỗi cửa hàng tiện lợi hàng đầu tại Việt Nam.
+              </>
+            }
             </p>
             <ul className="flex items-center gap-2">
               <a

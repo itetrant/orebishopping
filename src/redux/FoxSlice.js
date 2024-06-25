@@ -1,4 +1,5 @@
 //Fox reducer
+//TODO call API addToCart/resetCart
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
@@ -7,6 +8,7 @@ const initialState = {
   products: [],
   checkedBrands: [],
   checkedCategorys: [],
+  En: true,
 };
 
 export const FoxSlice = createSlice({
@@ -86,6 +88,21 @@ export const FoxSlice = createSlice({
         state.checkedCategorys.push(category);
       }
     },
+
+    resetCategory: (state) => {
+      state.checkedCategorys = [];
+    },
+
+    toggleLanguage: (state, action) => {
+      const language = action.payload;
+      if (language && language.toLowerCase() === 'en') {
+        state.En = true;
+      } else {
+        state.En = false;
+      }
+      state.userLanguage = language;
+    },
+    
   },
 });
 
@@ -97,5 +114,7 @@ export const {
   resetCart,
   toggleBrand,
   toggleCategory,
+  toggleLanguage,
+  resetCategory
 } = FoxSlice.actions;
 export default FoxSlice.reducer;

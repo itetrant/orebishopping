@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
 import Product from "../../home/Products/Product";
 import { useSelector } from "react-redux";
-import { paginationItems } from "../../../constants"; //TODO call API
+import { productList } from "../../../constants"; //TODO call API
 
-const items = paginationItems; //TODO call API
+const items = productList; //TODO call API
 
 function Items({ currentItems, selectedBrands, selectedCategories }) {
   // Filter items based on selected brand by NAME!!!

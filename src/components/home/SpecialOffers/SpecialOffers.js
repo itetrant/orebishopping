@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Heading from "../Products/Heading";
 import Product from "../Products/Product";
-import { SplOfferData } from "../../../constants";
+import { productList } from "../../../constants";
 import { useParams } from "react-router-dom";
 
 const SpecialOffers = () => {
@@ -10,7 +10,7 @@ const SpecialOffers = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setData(SplOfferData);
+    setData(productList);
   }, [category]); // Correct dependency array
 
   let catData = data;

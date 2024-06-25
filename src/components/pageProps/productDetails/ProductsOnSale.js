@@ -1,5 +1,5 @@
 import React from "react";
-import { SplOfferData } from "../../../constants";
+import { productList } from "../../../constants";
 
 const ProductsOnSale = () => {
   return (
@@ -8,7 +8,7 @@ const ProductsOnSale = () => {
         Products on sale
       </h3>
       <div className="flex flex-col gap-2">
-        {SplOfferData.map((item) => (
+        {productList.map((item) => (
           <div
             key={item._id}
             className="flex items-center gap-4 border-b-[1px] border-b-gray-300 py-2"

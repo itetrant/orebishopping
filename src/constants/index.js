@@ -1,25 +1,5 @@
+import { icons } from "react-icons";
 import {
-  spfOne,
-  spfTwo,
-  spfThree,
-  spfFour,
-  spfFive,
-  // bestSellerOne,
-  // bestSellerTwo,
-  // bestSellerThree,
-  // bestSellerFour,
-  // newArrOne,
-  // newArrTwo,
-  // newArrThree,
-  // newArrFour,
-  // imprimante1,
-  // imprimante2,
-  // imprimante4,
-  // imprimante5,
-  // imprimante6,
-  imprimante7,
-  imprimante8,
-  imprimante9,
   encre1,
   encre2,
   encre3,
@@ -57,7 +37,6 @@ import {
 import "./style.css";
 
 // =================== category Start here ====================
-
 export const categoryList = [
   {
     _id: 9006,
@@ -78,30 +57,55 @@ export const categoryList = [
     _id: 9009,
     title: "do-gia-dung",
     link: "/category/do-gia-dung",
+    icons: true,
   },
 ];
 
-// =================== category End here ====================
+export const fox_cat = [
+	{
+		"category_code": "1530",
+		"name_en": "frozen",
+		"name_local": "Đông lạnh",
+    "link": "/category/do-gia-dung",
+	},
+	{
+		"category_code": "1520",
+		"name_en": "Fish",
+		"name_local": "Cá",
+    "link": "/category/gia-vi-nuoc-cham"
+	},
+	{
+		"category_code": "1510",
+		"name_en": "Meat",
+		"name_local": "Thịt",
+    "link": "/category/do-hop",
+	}
+]
+
 // =================== NavBarList Start here ====================
 export const navBarList = [
   {
     _id: 1001,
-    title: "Home",
+    title: "Trang chủ",
+    title_en: "Home",
     link: "/",
   },
   {
     _id: 1002,
-    title: "Shop",
+    title: "Mua sắm",
+    title_en: "Shop",
     link: "/shop",
   },
   {
     _id: 1003,
-    title: "About",
+    title: "Về chúng tôi",
+    title_en: "About",
     link: "/about",
   },
   {
     _id: 1004,
-    title: "Contact",
+    title: "Liên hệ",
+    title_en: "Contact",
     link: "contact",
   },
   // {
@@ -110,215 +114,9 @@ export const navBarList = [
   //   link: "/journal",
   // },
 ];
-// =================== NavBarList End here ======================
-// =================== Special Offer data Start here ============
-export const SplOfferData = [
-  {
-    _id: "201",
-    img: spfOne,
-    productName: "Mứt Cam",
-    price: "35.00",
-    color: "Blank and White",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-uong-cac-loai",
-  },
-  {
-    _id: "202",
-    img: spfTwo,
-    productName: "Sunlight",
-    price: "180.00",
-    color: "Gray",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-uong-cac-loai",
-  },
-  {
-    _id: "203",
-    img: spfThree,
-    productName: "Downny",
-    price: "25.00",
-    color: "Mixed",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-uong-cac-loai",
-  },
-  {
-    _id: "204",
-    img: spfFour,
-    productName: "Mứt Dâu",
-    price: "220.00",
-    color: "Black",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-uong-cac-loai",
-  },
-  {
-    _id: "205",
-    img: spfFive,
-    productName: "Pine Apple",
-    price: "25.00",
-    color: "Mixed",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-uong-cac-loai",
-  },
-  {
-    _id: "206",
-    img: imprimante7,
-    productName: "imprimante",
-    price: "220.00",
-    color: "Black",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-uong-cac-loai",
-  },
-  {
-    _id: "207",
-    img: imprimante8,
-    productName: "imprimante",
-    price: "25.00",
-    color: "Mixed",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-uong-cac-loai",
-  },
-  {
-    _id: "208",
-    img: imprimante9,
-    productName: "imprimante",
-    price: "220.00",
-    color: "Black",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-uong-cac-loai",
-  },
-  {
-    _id: "209",
-    img: encre1,
-    productName: "encre",
-    price: "25.00",
-    color: "Mixed",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-hop",
-  },
-  {
-    _id: "210",
-    img: encre2,
-    productName: "encre",
-    price: "220.00",
-    color: "Black",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-hop",
-  },
-  {
-    _id: "211",
-    img: encre3,
-    productName: "encre",
-    price: "25.00",
-    color: "Mixed",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-hop",
-  },
-  {
-    _id: "212",
-    img: encre4,
-    productName: "encre",
-    price: "220.00",
-    color: "Black",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-hop",
-  },
-  {
-    _id: "213",
-    img: ruban1,
-    productName: "Nước chấm",
-    price: "25.00",
-    color: "Mixed",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "gia-vi-nuoc-cham",
-  },
-  {
-    _id: "214",
-    img: ruban2,
-    productName: "Nước chấm",
-    price: "220.00",
-    color: "Black",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "gia-vi-nuoc-cham",
-  },
-  {
-    _id: "215",
-    img: ruban3,
-    productName: "Nước chấm",
-    price: "25.00",
-    color: "Mixed",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "gia-vi-nuoc-cham",
-  },
-  {
-    _id: "216",
-    img: ruban4,
-    productName: "Nước chấm",
-    price: "220.00",
-    color: "Black",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "gia-vi-nuoc-cham",
-  },
-  {
-    _id: "217",
-    img: bac1,
-    productName: "Đồ gia dụng",
-    price: "25.00",
-    color: "Mixed",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-gia-dung",
-  },
-  {
-    _id: "219",
-    img: bac2,
-    productName: "Đồ gia dụng",
-    price: "220.00",
-    color: "Black",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-gia-dung",
-  },
-  {
-    _id: "220",
-    img: bac3,
-    productName: "Đồ gia dụng",
-    price: "25.00",
-    color: "Mixed",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-gia-dung",
-  },
-  {
-    _id: "221",
-    img: bac4,
-    productName: "Đồ gia dụng",
-    price: "220.00",
-    color: "Black",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-    cat: "do-gia-dung",
-  },
-];
-// =================== Special Offer data End here ==============
 
 // =================== PaginationItems Start here ===============
-
-export const paginationItems = [
+export const productList = [
   {
     _id: "201",
     img: IMPRIMANTE_PANTUM_CP2200DW,

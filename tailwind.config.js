@@ -24,7 +24,7 @@ module.exports = {
         primeColor: "#008A33",
         primeColorDark: "#006C28",
         primeColorLight: "#27BA5E",
-        menuBG: "#4BC779",
+        menuBG: "#008A33",
         menuText: "#ffffff",
         menuTextHover: "#000000",
       },

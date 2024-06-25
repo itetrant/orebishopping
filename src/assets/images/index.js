@@ -1,4 +1,6 @@
 import logo from "./logo.png";
+import vi from "./vi-flag.svg";
+import uk from "./uk-flag.svg";
 import logoLight from "./logoLight.png";
 import bannerImgOne from "./banner/web-banner-1.png";
 import bannerImgTwo from "./banner/web-banner-2.jpg";
@@ -81,6 +83,8 @@ import espson2 from "../images/products/imprimante/espson2.jpg";
 
 export {
   logo,
+  vi,
+  uk,
   logoLight,
   bannerImgOne,
   bannerImgTwo,

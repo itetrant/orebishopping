@@ -1,28 +1,35 @@
 import React, { useState } from "react";
-// import { FaPlus } from "react-icons/fa";
 import { ImPlus } from "react-icons/im";
 import NavTitle from "./NavTitle";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCategory } from "../../../../redux/FoxSlice";
 import { categoryList } from "../../../../constants"; //TODO call API
+import { motion } from "framer-motion";
 
 const Category = () => {
-
-  const [showSubCatOne, setShowSubCatOne] = useState(false);
-  const checkedCategorys = useSelector(
-    (state) => state.FoxReducer.checkedCategorys
-  );
+  const [showSubCatOne, setShowSubCatOne] = useState(true);
+  const checkedCategorys = useSelector((state) => state.FoxReducer.checkedCategorys);
+  const En = useSelector((state) => state.FoxReducer.En);
   const dispatch = useDispatch();
 
   const handleToggleCategory = (category) => {
-    console.log(category)
     dispatch(toggleCategory(category));
   };
 
   return (
     <div className="w-full">
-      <NavTitle title="Shop by Category" icons={true} />
-      <div>
+      <div
+        onClick={() => setShowSubCatOne(!showSubCatOne)}
+        className="cursor-pointer"
+      >
+      <NavTitle title={En ? "Shop by Category" : "Mua sắm theo danh mục"} icons={true} />
+      </div>
+      {showSubCatOne && (
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
         <ul className="flex flex-col gap-4 text-sm lg:text-base text-[#767676]">
           {categoryList.map((item) => (
             <li
@@ -37,8 +44,7 @@ const Category = () => {
               />
               {item.title}
               {item.icons && (
-                <span
-                  onClick={() => setShowSubCatOne(!showSubCatOne)}
+                <span onClick={()=>null}
                   className="text-[10px] lg:text-xs cursor-pointer text-gray-400 hover:text-primeColor duration-300"
                 >
                   <ImPlus />
@@ -46,9 +52,9 @@ const Category = () => {
               )}
             </li>
           ))}
-          {/* <li onClick={() => console.log(checkedCategorys)}>console.log</li> */}
         </ul>
-      </div>
+      </motion.div>
+    )}
     </div>
   );
 };

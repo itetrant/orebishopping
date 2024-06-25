@@ -3,20 +3,24 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdClose } from "react-icons/md";
 import { HiMenuAlt2 } from "react-icons/hi";  //hamburger menu icon
 import { motion } from "framer-motion";
-import { logo, logoLight } from "../../../assets/images";
+import { logo, logoLight, vi, uk } from "../../../assets/images";
 import Image from "../../designLayouts/Image";
-import { navBarList, categoryList } from "../../../constants"; //header not included category/brand
+import { navBarList, categoryList , fox_cat} from "../../../constants"; //header not included category/brand
 import Flex from "../../designLayouts/Flex";
-
-// import { IoLocationSharp } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { toggleLanguage } from "../../../redux/FoxSlice";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [sidenav, setSidenav] = useState(false);
   const [category, setCategory] = useState(false);
   const [brand, setBrand] = useState(false);
+  const [En, setEn] = useState(false);
+  const dispatch = useDispatch();
+
   const location = useLocation();
   useEffect(() => {
+
     let ResponsiveMenu = () => {
       if (window.innerWidth < 667) {
         setShowMenu(false);
@@ -24,21 +28,34 @@ const Header = () => {
         setShowMenu(true);
       }
     };
+
     ResponsiveMenu(); //show|hide hamburger menu
     window.addEventListener("resize", ResponsiveMenu);
+    // Cleanup on unmount
+    return () => {
+      window.removeEventListener("resize", ResponsiveMenu);
+    };
   }, []);
 
+  // Handle language toggle
+  const handleLanguageToggle = () => {
+    const newLanguage = En ? 'vi' : 'en';
+    setEn(!En);
+    dispatch(toggleLanguage(newLanguage));
+  };
+     
   return (
     <div className="w-full h-20 bg-white sticky top-0 z-50 border-b-[1px] border-b-gray-200">
       <nav className="h-full px-4 max-w-container mx-auto relative">
         <Flex className="flex items-center justify-between h-full">
           <Link to="/">
             <div>
-              <Image className="w-14 h-14 object-cover" imgSrc={logo} />
+              <Image className="w-14 h-14 object-cover" imgSrc={logo} /> 
             </div>
           </Link>
 
           <div>
+            {/* Shop by hamburger menu including navBarList, CategoryList and Brands*/}
             {showMenu && (
               <motion.ul
                 initial={{ y: 30, opacity: 0 }}
@@ -47,17 +64,23 @@ const Header = () => {
                 className="flex items-center w-auto z-50 p-0 gap-2"
               >
                 <>
-                  {navBarList.map(({ _id, title, link }) => (
+                  {navBarList.map(({ _id, title, title_en, link }) => (
                     <NavLink
                       key={_id}
-                      className="flex font-normal hover:font-bold w-20 h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
+                      className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-5 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
                       to={link}
                       state={{ data: location.pathname.split("/")[1] }}
                     >
-                      <li>{title}</li>
+                      <li>{En? title_en: title}</li>
                     </NavLink>
                   ))}
+
                 </>
+
+                <div className="pl-5" onClick={() => handleLanguageToggle()}>
+                    <Image className="w-6 h-6 object-cover cursor-pointer" imgSrc={ En? uk: vi } />
+                </div>
+
               </motion.ul>
             )}
             <HiMenuAlt2
@@ -78,6 +101,7 @@ const Header = () => {
                       src={logoLight}
                       alt="logoLight"
                     />
+
                     <ul className="text-gray-200 flex flex-col gap-2">
                       {navBarList.map((item) => (
                         <li
@@ -89,21 +113,30 @@ const Header = () => {
                             state={{ data: location.pathname.split("/")[1] }}
                             onClick={() => setSidenav(false)}
                           >
-                            {item.title}
+                           {En? item.title_en: item.title}
                           </NavLink>
                         </li>
                       ))}
+
+
+                      <li className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
+                        key="-1" onClick={() => handleLanguageToggle()}>
+                          { En ? <> Langage: <Image className="pl-2 w-6 h-4 object-cover cursor-pointer" imgSrc={ uk } /> </>
+                            : <> Ngôn ngữ: <Image className="pl-2 w-6 h-4 object-cover cursor-pointer" imgSrc={ vi } /> </>
+                          }
+                      </li>
+
                     </ul>
 
-                    {/*sideNav menu categories */}
+                    {/* CATE session*/}
                     <div className="mt-4">
                       <h1
                         onClick={() => setCategory(!category)}
                         className="flex justify-between text-base cursor-pointer items-center font-titleFont mb-2"
                       >
-                        Shop by Category{" "}
+                        {En?"Shop by Category ": "Mua sắm theo danh mục"} 
                         <span className="text-lg">{category ? "-" : "+"}</span>
-                      </h1>
+                      </h1>                 
                       {category && (
                         <motion.ul
                           initial={{ y: 15, opacity: 0 }}
@@ -113,14 +146,14 @@ const Header = () => {
                         >
                           {/* TODO dynamic */}
 
-                          {categoryList.map(({ _id, title, link }) => (
+                          {fox_cat.map(({ category_code, name_local, name_en, link }) => (
                              
-                             <li key={_id} className="headerSideNavLi">
+                             <li key={category_code} className="headerSideNavLi">
                                 <Link to={link}
                                  // state={{ data: location.pathname.split("/")[1] }}
                                  onClick={() => setSidenav(false)}
                                 >
-                                {title}
+                                {En?name_en:name_local}
                                 </Link>
                             </li>
                         ))
@@ -129,16 +162,16 @@ const Header = () => {
                       )}
                     </div>
 
-                    {/*sideNav menu brands */}
-
+                  {/* BRAND session*/}
                     <div className="mt-4">
                       <h1
                         onClick={() => setBrand(!brand)}
                         className="flex justify-between text-base cursor-pointer items-center font-titleFont mb-2"
                       >
-                        Shop by Brand
+                        {En?"Shop by Brand ": "Mua sắm theo thương hiệu"}  
                         <span className="text-lg">{brand ? "-" : "+"}</span>
                       </h1>
+
                       {brand && (
                         <motion.ul
                           initial={{ y: 15, opacity: 0 }}
@@ -146,7 +179,7 @@ const Header = () => {
                           transition={{ duration: 0.4 }}
                           className="text-sm flex flex-col gap-1"
                         >
-                          {/* TODO dynamic */}
+                          {/* TODO dynamic Brands instead of Cate here*/}
 
                           {categoryList.map(({ _id, title, link }) => (
                             <li className="headerSideNavLi">{title}</li>
