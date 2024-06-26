@@ -15,7 +15,7 @@ const BestSellers = () => {
       <Heading heading="Our Bestsellers" />
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-5 gap-10">
         <Product
-          _id="1011"
+          product_code="1011"
           img={bestSellerOne}
           productName="Orange Sting"
           price="35.00"
@@ -24,7 +24,7 @@ const BestSellers = () => {
           des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
-          _id="1012"
+          product_code="1012"
           img={bestSellerTwo}
           productName="New Mirinda"
           price="180.00"
@@ -33,7 +33,7 @@ const BestSellers = () => {
           des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
-          _id="1013"
+          product_code="1013"
           img={bestSellerThree}
           productName="Sting Dau"
           price="25.00"
@@ -42,7 +42,7 @@ const BestSellers = () => {
           des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
-          _id="1014"
+          product_code="1014"
           img={bestSellerFour}
           productName="Phomai Delcubi"
           price="220.00"
@@ -51,7 +51,7 @@ const BestSellers = () => {
           des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
-          _id="1015"
+          product_code="1015"
           img={bestSellerFive}
           productName="Mirinda"
           price="220.00"

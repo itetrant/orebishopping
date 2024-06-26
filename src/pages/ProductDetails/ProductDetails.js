@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
 import ProductInfo from "../../components/pageProps/productDetails/ProductInfo";
 import { FaDownload } from "react-icons/fa";
-// import RelatedProducts from "../../components/pageProps/productDetails/relatedProducts";
+// import RelatedProducts from "../../components/pageProps/productDetails/RelatedProducts";
 const tabs = [
   {
     id: "Fiche Technique",
@@ -24,7 +24,6 @@ const tabs = [
         height="315"
         src="https://www.youtube.com/embed/AltnFUpobRI"
         title="YouTube Video"
-        frameBorder="0"
         allowFullScreen
       ></iframe>
     ),

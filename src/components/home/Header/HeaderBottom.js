@@ -10,7 +10,7 @@ import { BsSuitHeartFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { toggleCategory, resetCategory } from "../../../redux/FoxSlice";
 import slug from "../../../utils/slug";
-
+import { categoryList } from "../../../constants";
 const HeaderBottom = () => {
   const products = useSelector((state) => state.FoxReducer.products);
   const En = useSelector((state) => state.FoxReducer.En);
@@ -74,33 +74,20 @@ const HeaderBottom = () => {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                 className="absolute top-16 z-50 bg-menuBG w-44 text-menuText h-auto p-4 pb-6"
+                 className="absolute top-16 z-50 bg-menuBG w-64 text-menuText h-auto p-4 pb-6"
               >
-                <Link to={"category/do-uong-cac-loai"} >
-                 <li onClick={()=>handleToggleCategory({ _id: 9006,    title: "do-uong-cac-loai",    link: "/category/do-uong-cac-loai"  })}             
-                    className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
-                    Đồ uống các loại
-                  </li>
-                </Link>
+                {
+                categoryList.map((cat)=> (
 
-                <Link to={"category/do-hop"}>
-                 <li onClick={()=>handleToggleCategory({_id: 9007,    title: "do-hop",    link: "/category/do-hop" })}
-                 className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
-                    Đồ hộp các loại
-                  </li>
-                </Link>
-                <Link to={"category/gia-vi-nuoc-cham"}>
-                 <li onClick={()=>handleToggleCategory({_id: 9008,    title: "gia-vi-nuoc-cham",    link: "/category/gia-vi-nuoc-cham" })}
-                    className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
-                    Gia vị-Nước Chấm
-                  </li>
-                </Link>
-                <Link to={"category/do-gia-dung"}>
-                <li onClick={()=>handleToggleCategory({_id: 9009,    title: "do-gia-dung",    link: "/category/do-gia-dung" })}
-                    className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
-                    Đồ gia dụng
-                  </li>
-                </Link>
+                  <Link to={"category/do-uong-cac-loai"} >
+                   <li onClick={()=>handleToggleCategory(cat)}             
+                      className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
+                      {En? cat.title_en: cat.title}
+                    </li>
+                  </Link>
+
+                ))}
+
               </motion.ul>
             )}
           </div>
@@ -132,7 +119,7 @@ const HeaderBottom = () => {
                        // setShowSearchBar(true) &
                         setSearchQuery("")
                       }
-                      key={item._id}
+                      key={item.product_code}
                       className="max-w-[600px] h-28 bg-gray-100 mb-3 flex items-center gap-3"
                     >
                       <img className="w-24" src={item.img} alt="productImg" />

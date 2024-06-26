@@ -18,7 +18,7 @@ function Items({ currentItems, selectedBrands, selectedCategories }) {
  //TODO filter by cat_id
     const isCategorySelected =
       selectedCategories.length === 0 ||
-      selectedCategories.some((category) => category.title === item.cat);
+      selectedCategories.some((category) => category.category_code === item.category_code);
 
     return isBrandSelected && isCategorySelected; // must match both conditions
   });
@@ -26,9 +26,9 @@ function Items({ currentItems, selectedBrands, selectedCategories }) {
   return (
     <>
       {filteredItems.map((item) => (
-        <div key={item._id} className="w-full">
+        <div key={item.product_code} className="w-full">
           <Product
-            _id={item._id}
+            product_code={item.product_code}
             img={item.img}
             productName={item.productName}
             price={item.price}

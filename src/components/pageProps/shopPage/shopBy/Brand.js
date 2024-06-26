@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import NavTitle from "./NavTitle";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleBrand } from "../../../../redux/FoxSlice";
-
+import { brandList } from "../../../../constants";
 const Brand = () => {
   const [showBrands, setShowBrands] = useState(true);
   const checkedBrands = useSelector(
@@ -13,26 +13,6 @@ const Brand = () => {
     (state) => state.FoxReducer.En
   );  
   const dispatch = useDispatch();
-
-  const brands = [
-    {
-      _id: 900,
-      title: "HighLands",
-    },
-    {
-      _id: 901,
-      title: "LifeBuoy",
-    },
-    {
-      _id: 902,
-      title: "PepsiCo",
-    },
-
-    {
-      _id: 903,
-      title: "AngryBirds",
-    },
-  ];
 
   const handleToggleBrand = (brand) => {
     dispatch(toggleBrand(brand));
@@ -53,18 +33,18 @@ const Brand = () => {
           transition={{ duration: 0.5 }}
         >
           <ul className="flex flex-col gap-4 text-sm lg:text-base text-[#767676]">
-            {brands.map((item) => (
+            {brandList.map((brand) => (
               <li
-                key={item._id}
+                key={brand.id}
                 className="border-b-[1px] border-b-[#F0F0F0] pb-2 flex items-center gap-2 hover:text-primeColor hover:border-gray-400 duration-300"
               >
                 <input
                   type="checkbox"
-                  id={item._id}
-                  checked={checkedBrands.some((b) => b._id === item._id)}
-                  onChange={() => handleToggleBrand(item)}
+                  id={brand.id}
+                  checked={checkedBrands.some((b) => b.id === brand.id)}
+                  onChange={() => handleToggleBrand(brand)}
                 />
-                {item.title}
+                {brand.title}
               </li>
             ))}
           </ul>

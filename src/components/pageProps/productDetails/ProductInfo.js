@@ -95,7 +95,7 @@ const ProductInfo = ({ productInfo }) => {
         onClick={() =>
           dispatch(
             addToCart({
-              _id: productInfo.id,
+              product_code: productInfo.product_code,
               name: productInfo.productName,
               quantity: 1,
               image: productInfo.img,

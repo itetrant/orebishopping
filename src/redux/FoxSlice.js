@@ -17,7 +17,7 @@ export const FoxSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const item = state.products.find(
-        (item) => item._id === action.payload._id
+        (item) => item.product_code === action.payload.product_code
       );
       if (item) {
         item.quantity += action.payload.quantity;
@@ -29,7 +29,7 @@ export const FoxSlice = createSlice({
     },
     increaseQuantity: (state, action) => {
       const item = state.products.find(
-        (item) => item._id === action.payload._id
+        (item) => item.product_code === action.payload.product_code
       );
       if (item) {
         item.quantity++;
@@ -38,7 +38,7 @@ export const FoxSlice = createSlice({
     },
     drecreaseQuantity: (state, action) => {
       const item = state.products.find(
-        (item) => item._id === action.payload._id
+        (item) => item.product_code === action.payload.product_code
       );
       if (item.quantity === 1) {
         item.quantity = 1;
@@ -49,7 +49,7 @@ export const FoxSlice = createSlice({
     },
     deleteItem: (state, action) => {
       state.products = state.products.filter(
-        (item) => item._id !== action.payload
+        (item) => item.product_code !== action.payload
       );
       // Dispatch a success toast
       toast.error("Product removed from cart");
@@ -62,12 +62,12 @@ export const FoxSlice = createSlice({
     toggleBrand: (state, action) => {
       const brand = action.payload;
       const isBrandChecked = state.checkedBrands.some(
-        (b) => b._id === brand._id
+        (b) => b.id === brand.id
       );
 
       if (isBrandChecked) {
         state.checkedBrands = state.checkedBrands.filter(
-          (b) => b._id !== brand._id
+          (b) => b.id !== brand.id
         );
       } else {
         state.checkedBrands.push(brand);
@@ -75,17 +75,17 @@ export const FoxSlice = createSlice({
     },
 
     toggleCategory: (state, action) => {
-      const category = action.payload;
+      const cat = action.payload;
       const isCategoryChecked = state.checkedCategorys.some(
-        (b) => b._id === category._id
+        (b) => b.category_code === cat.category_code
       );
 
       if (isCategoryChecked) {
         state.checkedCategorys = state.checkedCategorys.filter(
-          (b) => b._id !== category._id
+          (b) => b.category_code !== cat.category_code
         );
       } else {
-        state.checkedCategorys.push(category);
+        state.checkedCategorys.push(cat);
       }
     },
 

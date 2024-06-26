@@ -9,7 +9,7 @@ const RelatedProducts = ({ item }) => {
  const getRelatedProducts = (currentProduct) => {
   // Example logic to find related products (could be based on category, tags, etc.)
   const relatedItems = productList.filter(
-    product => product.category === currentProduct.category && product._id !== currentProduct._id
+    product => product.category === currentProduct.category && product.product_code !== currentProduct.product_code
   );
   return relatedItems.slice(0, 3); // Limit to 3 products
 };
@@ -24,7 +24,7 @@ const relatedItems = getRelatedProducts(item);
       <div className="flex flex-col gap-2" >
         {relatedItems.map((item) => (
           <div onClick={()=> handleOnlick(item)}
-            key={item._id}
+            key={item.product_code}
             className="flex items-center gap-4 border-b-[1px] border-b-gray-300 py-2"
           >
             <div>

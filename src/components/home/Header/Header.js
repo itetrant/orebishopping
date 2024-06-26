@@ -5,7 +5,7 @@ import { HiMenuAlt2 } from "react-icons/hi";  //hamburger menu icon
 import { motion } from "framer-motion";
 import { logo, logoLight, vi, uk } from "../../../assets/images";
 import Image from "../../designLayouts/Image";
-import { navBarList, categoryList , fox_cat} from "../../../constants"; //header not included category/brand
+import { navBarList, categoryList , brandList} from "../../../constants"; //header not included category/brand
 import Flex from "../../designLayouts/Flex";
 import { useDispatch } from "react-redux";
 import { toggleLanguage } from "../../../redux/FoxSlice";
@@ -103,17 +103,17 @@ const Header = () => {
                     />
 
                     <ul className="text-gray-200 flex flex-col gap-2">
-                      {navBarList.map((item) => (
+                      {navBarList.map((nav) => (
                         <li
                           className="font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
-                          key={item._id}
+                          key={nav._id}
                         >
                           <NavLink
-                            to={item.link}
+                            to={nav.link}
                             state={{ data: location.pathname.split("/")[1] }}
                             onClick={() => setSidenav(false)}
                           >
-                           {En? item.title_en: item.title}
+                           {En? nav.title_en: nav.title}
                           </NavLink>
                         </li>
                       ))}
@@ -121,7 +121,7 @@ const Header = () => {
 
                       <li className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
                         key="-1" onClick={() => handleLanguageToggle()}>
-                          { En ? <> Langage: <Image className="pl-2 w-6 h-4 object-cover cursor-pointer" imgSrc={ uk } /> </>
+                          { En ? <> Language: <Image className="pl-2 w-6 h-4 object-cover cursor-pointer" imgSrc={ uk } /> </>
                             : <> Ngôn ngữ: <Image className="pl-2 w-6 h-4 object-cover cursor-pointer" imgSrc={ vi } /> </>
                           }
                       </li>
@@ -146,14 +146,14 @@ const Header = () => {
                         >
                           {/* TODO dynamic */}
 
-                          {fox_cat.map(({ category_code, name_local, name_en, link }) => (
+                          {categoryList.map(({ category_code, title_en, title, link }) => (
                              
                              <li key={category_code} className="headerSideNavLi">
                                 <Link to={link}
                                  // state={{ data: location.pathname.split("/")[1] }}
                                  onClick={() => setSidenav(false)}
                                 >
-                                {En?name_en:name_local}
+                               {En?title_en:title}
                                 </Link>
                             </li>
                         ))
@@ -181,8 +181,10 @@ const Header = () => {
                         >
                           {/* TODO dynamic Brands instead of Cate here*/}
 
-                          {categoryList.map(({ _id, title, link }) => (
-                            <li className="headerSideNavLi">{title}</li>
+                          {brandList.map(({ title, title_en }) => (
+                            <li className="headerSideNavLi">
+                             {En?title_en:title}
+                            </li>
                         ))} 
                         </motion.ul>
                       )}

@@ -52,7 +52,7 @@ const NewArrivals = () => {
       <Slider {...settings}>
         <div className="px-2">
           <Product
-            _id="100001"
+            product_code="100001"
             img={newArrOne}
             productName="Banh Trung Thu"
             price="44.00"
@@ -63,7 +63,7 @@ const NewArrivals = () => {
         </div>
         <div className="px-2">
           <Product
-            _id="100002"
+            product_code="100002"
             img={newArrTwo}
             productName="Sua Chua Vinamilk Loc4"
             price="250.00"
@@ -74,7 +74,7 @@ const NewArrivals = () => {
         </div>
         <div className="px-2">
           <Product
-            _id="100003"
+            product_code="100003"
             img={newArrThree}
             productName="Sua Chua Vinamilk TH24"
             price="80.00"
@@ -85,7 +85,7 @@ const NewArrivals = () => {
         </div>
         <div className="px-2">
           <Product
-            _id="100004"
+            product_code="100004"
             img={newArrFour}
             productName="Chocobie"
             price="60.00"
@@ -96,7 +96,7 @@ const NewArrivals = () => {
         </div>
         <div className="px-2">
           <Product
-            _id="100005"
+            product_code="100005"
             img={newArrTwo}
             productName="Funny toys for babies"
             price="60.00"

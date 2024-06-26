@@ -47,16 +47,16 @@ const Color = () => {
           transition={{ duration: 0.5 }}
         >
           <ul className="flex flex-col gap-4 text-sm lg:text-base text-[#767676]">
-            {colors.map((item) => (
+            {colors.map((color) => (
               <li
-                key={item._id}
+                key={color._id}
                 className="border-b-[1px] border-b-[#F0F0F0] pb-2 flex items-center gap-2"
               >
                 <span
-                  style={{ background: item.base }}
+                  style={{ background: color.base }}
                   className={`w-3 h-3 bg-gray-500 rounded-full`}
                 ></span>
-                {item.title}
+                {color.title}
               </li>
             ))}
           </ul>
