@@ -146,7 +146,7 @@ const Banner = () => {
       imgSrc: bannerImgTwo,
       text: "Mở Bcard - Dùng Thỏa Thích",
       Subtext: "Download Loyalty App - Tích lũy điểm khi mua sắm tại B's Mart.",
-      buttonLink: "/",
+      buttonLink: "https://bcard.bsmartvina.com",
       buttonText: "Download",
     },
     {
@@ -154,7 +154,7 @@ const Banner = () => {
       text: "Tưng Bừng Ưu Đãi Cùng Comfort.",
       Subtext:
         "Từ 13/6 - 30/7. Tưng Bừng Ưu Đãi Cùng Comfort. Giảm giá đến 50%.",
-      buttonLink: "/about",
+      buttonLink: "/shop",
       buttonText: "Mua Ngay",
     },
     // Add more slides as needed

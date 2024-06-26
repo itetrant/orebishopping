@@ -9,6 +9,7 @@ import { productList } from "../../../constants";
 import { BsSuitHeartFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { toggleCategory, resetCategory } from "../../../redux/FoxSlice";
+import slug from "../../../utils/slug";
 
 const HeaderBottom = () => {
   const products = useSelector((state) => state.FoxReducer.products);
@@ -21,12 +22,12 @@ const HeaderBottom = () => {
   let dispatch = useDispatch();
   useEffect(() => {
     document.body.addEventListener("click", (e) => {
-      if (ref.current.contains(e.target)) {
+      if (ref?.current?.contains(e.target)) {
         setShow(prev => !prev);
       } else {
         setShow(false);
       }
-      if (ref2.current.contains(e.target)) {
+      if (ref2?.current?.contains(e.target)) {
         setShowUser(prev => !prev)
       } else {
         setShowUser(false)
@@ -121,10 +122,7 @@ const HeaderBottom = () => {
                     <div
                       onClick={() =>
                         navigate(
-                          `/product/${item.productName
-                            .toLowerCase()
-                            .split(" ")
-                            .join("-")}`,  //NTT "" to "-"
+                          `/product/${slug(item.productName)}`,  //NTT
                           {
                             state: {
                               item: item,

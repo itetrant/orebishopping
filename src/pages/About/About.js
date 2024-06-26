@@ -19,8 +19,8 @@ const About = () => {
       <Breadcrumbs title="About" prevLocation={prevLocation} />
       <div className="pb-10">
 
-        <h1 class="max-w-[600px] text-base text-lightText mb-2">
-          <span class="text-primeColor font-semibold text-lg">B's Mart</span>
+        <h1 className="max-w-[600px] text-base text-lightText mb-2">
+          <span className="text-primeColor font-semibold text-lg">B's Mart</span>
           <p>Vision: Multi-industry, multi-format, and multinational business.</p>
           <p>Mission:</p>
           <p>- Listen to and encourage employees, aiming to build and develop the company quickly and satisfy customers.</p>

@@ -5,8 +5,11 @@ import { useLocation } from "react-router-dom";
 const Breadcrumbs = ({ prevLocation, title }) => {
   const location = useLocation();
   const [locationPath, setLocationPath] = useState("");
+
   useEffect(() => {
-    setLocationPath(location.pathname.split("/")[1]);
+    // Update locationPath whenever location changes
+    const pathSegments = location.pathname.split("/");
+    setLocationPath(pathSegments.length > 1 ? pathSegments[1] : "Home");
   }, [location]);
 
   return (
@@ -15,8 +18,7 @@ const Breadcrumbs = ({ prevLocation, title }) => {
         {title}
       </h1>
       <p className="text-sm font-normal text-lightText capitalize flex items-center">
-        <span> {prevLocation === "" ? "Home" : prevLocation}</span>
-
+        <span>{prevLocation === "" ? "Home" : prevLocation}</span>
         <span className="px-1">
           <HiOutlineChevronRight />
         </span>

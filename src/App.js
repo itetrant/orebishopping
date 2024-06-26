@@ -5,6 +5,7 @@ import {
   createRoutesFromElements,
   Route,
   ScrollRestoration,
+  Navigate
 } from "react-router-dom";
 import Footer from "./components/home/Footer/Footer";
 import FooterBottom from "./components/home/Footer/FooterBottom";
@@ -17,11 +18,9 @@ import SignUp from "./pages/Account/SignUp";
 import Cart from "./pages/Cart/Cart";
 import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
-import Journal from "./pages/Journal/Journal";
 import Offer from "./pages/Offer/Offer";
 import Payment from "./pages/payment/Payment";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
-import ProductOnSale from "./components/pageProps/productDetails/ProductsOnSale";
 import Shop from "./pages/Shop/Shop";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -56,21 +55,20 @@ const router = createBrowserRouter(
     <Route>
       <Route path="/" element={<Layout />}  errorElement={<ErrorPage />}>
       {/* Inside Outlet */}
-        {/* ==================== Header Navlink Start here =================== */}
+        {/* ==================== Header Navlink Start here ==== */}
         <Route index element={<Home />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/journal" element={<Journal />}></Route>
         {/* ====================Main paths===================== */}
         <Route path="/category/:category" element={<Offer />}></Route>
         <Route path="/product/:_id" element={<ProductDetails />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/paymentgateway" element={<Payment />}></Route>
-        <Route path="/ProductOnSale" element={<ProductOnSale />}></Route>
         <Route path="*" element={<ErrorPage />} />
       </Route>
       {/* Outside Outlet */}
+      <Route path="/home" element={<Navigate to="/" />} /> {/* Add this line */}
       <Route path="/signup" element={<SignUp />}></Route>
       <Route path="/signin" element={<SignIn />}></Route>
       <Route path="*" element={<ErrorPage />} />

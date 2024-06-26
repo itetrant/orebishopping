@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BsSuitHeartFill } from "react-icons/bs";
-import { GiReturnArrow } from "react-icons/gi";
+// import { GiReturnArrow } from "react-icons/gi";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineLabelImportant } from "react-icons/md";
 import Image from "../../designLayouts/Image";
@@ -9,12 +9,13 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../redux/FoxSlice";
 import { toast } from "react-toastify";
-
+import slug from "../../../utils/slug";
 const Product = (props) => {
   const dispatch = useDispatch();
   const _id = props.productName;
+
   const idString = (_id) => {
-    return String(_id).toLowerCase().split(" ").join("-"); //NTT "" to "-"
+    return slug(_id);
   };
   const rootId = idString(_id);
   const [wishList, setWishList] = useState([]);
