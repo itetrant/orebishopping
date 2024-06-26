@@ -60,8 +60,8 @@ const ProductDetails = () => {
           <div className="h-full md:col-span-2 xl:col-span-2">
             <img
               className="w-full h-full md:col-span-2 xl:col-span-2 xl:px-4 flex flex-col gap-6 justify-center"
-              src={productInfo.img}
-              alt={productInfo.img}
+              src={productInfo.image}
+              alt={productInfo.image}
             />
           </div>
           <div className="h-full w-full md:col-span-2 xl:col-span-4 xl:px-4 flex flex-col gap-6 justify-center">

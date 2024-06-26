@@ -16,8 +16,8 @@ const BestSellers = () => {
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-5 gap-10">
         <Product
           product_code="1011"
-          img={bestSellerOne}
-          productName="Orange Sting"
+          image={bestSellerOne}
+          name="Orange Sting"
           price="35.00"
           color="Blank and Orange"
           badge={true}
@@ -25,8 +25,8 @@ const BestSellers = () => {
         />
         <Product
           product_code="1012"
-          img={bestSellerTwo}
-          productName="New Mirinda"
+          image={bestSellerTwo}
+          name="New Mirinda"
           price="180.00"
           color="Gray"
           badge={false}
@@ -34,8 +34,8 @@ const BestSellers = () => {
         />
         <Product
           product_code="1013"
-          img={bestSellerThree}
-          productName="Sting Dau"
+          image={bestSellerThree}
+          name="Sting Dau"
           price="25.00"
           color="Mixed"
           badge={true}
@@ -43,8 +43,8 @@ const BestSellers = () => {
         />
         <Product
           product_code="1014"
-          img={bestSellerFour}
-          productName="Phomai Delcubi"
+          image={bestSellerFour}
+          name="Phomai Delcubi"
           price="220.00"
           color="Black"
           badge={false}
@@ -52,8 +52,8 @@ const BestSellers = () => {
         />
         <Product
           product_code="1015"
-          img={bestSellerFive}
-          productName="Mirinda"
+          image={bestSellerFive}
+          name="Mirinda"
           price="220.00"
           color="Black"
           badge={false}

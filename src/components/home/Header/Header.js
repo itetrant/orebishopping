@@ -64,9 +64,9 @@ const Header = () => {
                 className="flex items-center w-auto z-50 p-0 gap-2"
               >
                 <>
-                  {navBarList.map(({ _id, title, title_en, link }) => (
+                  {navBarList.map(({ id, title, title_en, link }) => (
                     <NavLink
-                      key={_id}
+                      key={id}
                       className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-5 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
                       to={link}
                       state={{ data: location.pathname.split("/")[1] }}
@@ -106,7 +106,7 @@ const Header = () => {
                       {navBarList.map((nav) => (
                         <li
                           className="font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
-                          key={nav._id}
+                          key={nav.id}
                         >
                           <NavLink
                             to={nav.link}
@@ -146,14 +146,14 @@ const Header = () => {
                         >
                           {/* TODO dynamic */}
 
-                          {categoryList.map(({ category_code, title_en, title, link }) => (
+                          {categoryList.map(({ category_code, name_en, name_local, link }) => (
                              
                              <li key={category_code} className="headerSideNavLi">
                                 <Link to={link}
                                  // state={{ data: location.pathname.split("/")[1] }}
                                  onClick={() => setSidenav(false)}
                                 >
-                               {En?title_en:title}
+                               {En?name_en:name_local}
                                 </Link>
                             </li>
                         ))
@@ -181,8 +181,8 @@ const Header = () => {
                         >
                           {/* TODO dynamic Brands instead of Cate here*/}
 
-                          {brandList.map(({ title, title_en }) => (
-                            <li className="headerSideNavLi">
+                          {brandList.map(({ id, title, title_en }) => (
+                            <li className="headerSideNavLi" key={id}>
                              {En?title_en:title}
                             </li>
                         ))} 

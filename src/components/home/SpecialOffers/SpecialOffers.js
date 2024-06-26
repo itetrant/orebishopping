@@ -29,23 +29,23 @@ const SpecialOffers = () => {
   }
 
   if (!category) {
-    filteredData = data.slice(0, 5);
+    filteredData = data.slice(0, 4);
   }
 
   return (
     <div className="w-full pb-20">
       <Heading heading="Special Offers" />
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-5 gap-10">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
         {filteredData.map((data) => (
           <Product
             key={data.product_code}
             product_code={data.product_code}
-            img={data.img}
-            productName={data.productName}
+            image={data.image}
+            name={data.name}
             price={data.price}
             color={data.color}
             badge={true}
-            des={data.des}
+            des={data.full_desc_local}
           />
         ))}
       </div>

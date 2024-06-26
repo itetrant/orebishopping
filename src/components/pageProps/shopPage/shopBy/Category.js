@@ -42,7 +42,7 @@ const Category = () => {
                 checked={checkedCategorys.some((b) => b.category_code === cat.category_code)}
                 onChange={() => handleToggleCategory(cat)}
               />
-              {En?cat.title_en:cat.title}
+              {En?cat.name_en:cat.name_local}
               {/* {item.icons && (
                 <span onClick={()=>null}
                   className="text-[10px] lg:text-xs cursor-pointer text-gray-400 hover:text-primeColor duration-300"

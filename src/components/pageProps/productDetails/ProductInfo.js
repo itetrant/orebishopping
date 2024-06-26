@@ -9,8 +9,8 @@ const ProductInfo = ({ productInfo }) => {
   };
 
   const renderDescription = () => {
-    if (!productInfo.des) {
-      return null; // or handle accordingly if product.des is not defined
+    if (!productInfo.name) {
+      return null; // or handle accordingly if product.full_desc_local is not defined
     }
 
     const description = productInfo.des.split(/:(.*?)-/).map((part, index) => {
@@ -26,7 +26,7 @@ const ProductInfo = ({ productInfo }) => {
   const dispatch = useDispatch();
   return (
     <div className="flex flex-col gap-5">
-      <h2 className="text-4xl font-semibold">{productInfo.productName}</h2>
+      <h2 className="text-4xl font-semibold">{productInfo.name}</h2>
       <p className="text-2xl font-semibold">
         {productInfo.price}vnd
         <span className="text-xl font-semibold line-through ml-2">100</span>
@@ -96,9 +96,9 @@ const ProductInfo = ({ productInfo }) => {
           dispatch(
             addToCart({
               product_code: productInfo.product_code,
-              name: productInfo.productName,
+              name: productInfo.name,
               quantity: 1,
-              image: productInfo.img,
+              image: productInfo.image,
               badge: productInfo.badge,
               price: productInfo.price,
               colors: productInfo.color,

@@ -46,7 +46,7 @@ const HeaderBottom = () => {
   useEffect(() => {
     //TODO API call
     const filtered = productList.filter((item) =>
-      item.productName.toLowerCase().includes(searchQuery.toLowerCase())
+      item.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredProducts(filtered);
   }, [searchQuery]);
@@ -80,9 +80,9 @@ const HeaderBottom = () => {
                 categoryList.map((cat)=> (
 
                   <Link to={"category/do-uong-cac-loai"} >
-                   <li onClick={()=>handleToggleCategory(cat)}             
+                   <li key = {cat.category_code} onClick={()=>handleToggleCategory(cat)}             
                       className="flex font-normal hover:font-bold items-center text-lg text-gray-200 hover:underline underline-offset-[4px] decoration-[1px] hover:text-white md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0">
-                      {En? cat.title_en: cat.title}
+                      {En? cat.name_en: cat.name_local}
                     </li>
                   </Link>
 
@@ -109,7 +109,7 @@ const HeaderBottom = () => {
                     <div
                       onClick={() =>
                         navigate(
-                          `/product/${slug(item.productName)}`,  //NTT
+                          `/product/${slug(item.name)}`,  //NTT
                           {
                             state: {
                               item: item,
@@ -125,7 +125,7 @@ const HeaderBottom = () => {
                       <img className="w-24" src={item.img} alt="productImg" />
                       <div className="flex flex-col gap-1">
                         <p className="font-semibold text-lg">
-                          {item.productName}
+                          {item.name}
                         </p>
                         <p className="text-xs">
                           {item.des.length > 100

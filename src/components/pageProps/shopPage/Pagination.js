@@ -29,12 +29,12 @@ function Items({ currentItems, selectedBrands, selectedCategories }) {
         <div key={item.product_code} className="w-full">
           <Product
             product_code={item.product_code}
-            img={item.img}
-            productName={item.productName}
+            image={item.image}
+            name={item.name}
             price={item.price}
             color={item.color}
             badge={item.badge}
-            des={item.des}
+            des={item.full_desc_local}
             pdf={item.pdf}
             ficheTech={item.ficheTech}
           />

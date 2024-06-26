@@ -53,8 +53,8 @@ const NewArrivals = () => {
         <div className="px-2">
           <Product
             product_code="100001"
-            img={newArrOne}
-            productName="Banh Trung Thu"
+            image={newArrOne}
+            name="Banh Trung Thu"
             price="44.00"
             color="Black"
             badge={true}
@@ -64,8 +64,8 @@ const NewArrivals = () => {
         <div className="px-2">
           <Product
             product_code="100002"
-            img={newArrTwo}
-            productName="Sua Chua Vinamilk Loc4"
+            image={newArrTwo}
+            name="Sua Chua Vinamilk Loc4"
             price="250.00"
             color="Black"
             badge={true}
@@ -75,8 +75,8 @@ const NewArrivals = () => {
         <div className="px-2">
           <Product
             product_code="100003"
-            img={newArrThree}
-            productName="Sua Chua Vinamilk TH24"
+            image={newArrThree}
+            name="Sua Chua Vinamilk TH24"
             price="80.00"
             color="Mixed"
             badge={true}
@@ -86,8 +86,8 @@ const NewArrivals = () => {
         <div className="px-2">
           <Product
             product_code="100004"
-            img={newArrFour}
-            productName="Chocobie"
+            image={newArrFour}
+            name="Chocobie"
             price="60.00"
             color="Mixed"
             badge={false}
@@ -97,8 +97,8 @@ const NewArrivals = () => {
         <div className="px-2">
           <Product
             product_code="100005"
-            img={newArrTwo}
-            productName="Funny toys for babies"
+            image={newArrTwo}
+            name="Funny toys for babies"
             price="60.00"
             color="Mixed"
             badge={false}
