@@ -1,3 +1,4 @@
+// ===Hardcode Pictures for demonstration======================
 import {
   encre1,
   encre2,
@@ -32,8 +33,6 @@ import {
   espson1,
   espson2,
 } from "../assets/images/index";
-
-import "./style.css";
 
 // =================== category Start here ====================
 export const categoryList = [
